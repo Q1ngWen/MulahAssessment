@@ -1,0 +1,57 @@
+// document.addEventListener("DOMContentLoaded", () => {
+//     document.querySelector("#input").addEventListener("keydown", function(e) {
+//         if (e.code === "Enter") {
+//             console.log("Start chatting to Bob!");
+//             let input = document.getElementById("input").value;
+//             document.getElementById("user").innerHTML = input;
+//             output(input)
+//         }
+//     })
+// })
+
+document.addEventListener("DOMContentLoaded", () => {
+    const inputField = document.getElementById("input")
+    inputField.addEventListener("keydown", function(e) {
+        if (e.code === "Enter") {
+            let input = inputField.value;
+            inputField.value = "";
+            // let input = document.getElementById("input").value;
+            // document.getElementById("user").innerHTML = input;
+            output(input);
+            console.log(`I typed '${input}'`);
+        }
+    })
+})
+
+function output (input) {
+    let text = input.replace(/[^a-z' '!?.,]/gi, "");
+    let response;
+    if (text == "") {
+        response = "Fine. Be that way!";
+    } else if (text.match(/[A-Z]/g) && text.match(/[/?*]/g)) {
+        response = "Calm down, I know what I'm doing!";
+    } else if (text.match(/[?*]/g)) {
+        response = "Sure.";
+    } else if (text.match(/[A-Z]/g)) {
+        response = "Whoa, chill out!";
+    } else {
+        response = "Whatever.";
+    }
+    
+    addChat(text,response);
+    console.log(response);
+}
+
+function addChat (text, response) {
+    const mainDiv = document.getElementById("main");
+    let userDiv = document.createElement("div");
+    userDiv.id = "user";
+    userDiv.innerHTML = `You: <span id=user-response">${text}</span>`;
+    mainDiv.appendChild(userDiv);
+    // for (var i = 1; i < )
+
+    let botDiv = document.createElement("div");
+    botDiv.id = "bot";
+    botDiv.innerHTML = `Chatbot: <span id="bot-response">${response}</span>`;
+    mainDiv.appendChild(botDiv);
+}
