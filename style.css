@@ -1,9 +1,7 @@
 body {
-    /* color: azure; */
     font-weight: bold;
     font-size: 20px;
     font-family: "Courier New";
-    /* background: rgb(200, 232, 241); */
 }
 
 body::after {
@@ -37,7 +35,6 @@ span {
 
 #main {
     position: center;
-    /* border: 0ps solid rgb(129, 129, 129); */
     padding: 40px;
     background-color: rgba(240, 255, 255, 0.568);
     background-position: center;

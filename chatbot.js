@@ -1,22 +1,9 @@
-// document.addEventListener("DOMContentLoaded", () => {
-//     document.querySelector("#input").addEventListener("keydown", function(e) {
-//         if (e.code === "Enter") {
-//             console.log("Start chatting to Bob!");
-//             let input = document.getElementById("input").value;
-//             document.getElementById("user").innerHTML = input;
-//             output(input)
-//         }
-//     })
-// })
-
 document.addEventListener("DOMContentLoaded", () => {
     const inputField = document.getElementById("input")
     inputField.addEventListener("keydown", function(e) {
         if (e.code === "Enter") {
             let input = inputField.value;
             inputField.value = "";
-            // let input = document.getElementById("input").value;
-            // document.getElementById("user").innerHTML = input;
             output(input);
             console.log(`I typed '${input}'`);
         }
@@ -48,7 +35,6 @@ function addChat (text, response) {
     userDiv.id = "user";
     userDiv.innerHTML = `You: <span id=user-response">${text}</span>`;
     mainDiv.appendChild(userDiv);
-    // for (var i = 1; i < )
 
     let botDiv = document.createElement("div");
     botDiv.id = "bot";
