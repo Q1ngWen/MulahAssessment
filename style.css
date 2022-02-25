@@ -1,14 +1,15 @@
 body {
-    color: azure;
+    /* color: azure; */
     font-weight: bold;
     font-size: 20px;
     font-family: "Courier New";
-    background: rgb(200, 232, 241);
+    /* background: rgb(200, 232, 241); */
 }
 
 body::after {
     content: "";
     background-image: url("bot.png");
+    background-repeat: round;
     opacity: 0.5;
     top: 0;
     left: 0;
@@ -35,12 +36,11 @@ span {
 }
 
 #main {
-    position: fixed;
-    /* top: 40%; */
-    right: 200px;
-    width: 400px;
-    border: 0ps solid rgb(129, 129, 129);
+    position: center;
+    /* border: 0ps solid rgb(129, 129, 129); */
     padding: 40px;
+    background-color: rgba(240, 255, 255, 0.568);
+    background-position: center;
 }
 
 #main div {
